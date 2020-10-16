@@ -12,7 +12,7 @@ sudo apt update
 sudo apt install mopidy
 
 #Mopidy extensions
-sudo apt install Mopidy-MPD mopidy-local mopidy-soundcloud
+sudo apt install mopidy-mpd mopidy-local mopidy-soundcloud
 
 #Mopidy Frontend
 sudo pip3 install Mopidy-PiDi pidi-display-pil pidi-display-st7789 mopidy-raspberry-gpio Mopidy-Muse
