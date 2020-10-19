@@ -4,7 +4,7 @@
 ##### Immediately after startup run raspi-config, enable spi i2c ssh, and CHANGE LOGIN CREDENTIALS 
 sudo apt update && sudo apt upgrade 
 #FOUND ERROR - Gstreamers REQUIRED avoid apt installs with --no-install-recommends
-sudo apt install git mc htop fail2ban python3 python3-rpi.gpio python3-spidev python3-pip python3-pil python3-numpy --no-install-recommends
+sudo apt install git mc htop fail2ban python3 python3-rpi.gpio python3-spidev python3-pip python3-pil python3-numpy #--no-install-recommends
 
 #install mopidy
 wget -q -O - https://apt.mopidy.com/mopidy.gpg | sudo apt-key add -
@@ -16,7 +16,10 @@ sudo apt install mopidy
 sudo apt install mopidy-mpd mopidy-local mopidy-soundcloud
 
 #Mopidy Frontend
-sudo pip3 install Mopidy-PiDi pidi-display-pil pidi-display-st7789 mopidy-raspberry-gpio Mopidy-Muse
+sudo pip3 install Mopidy-PiDi pidi-display-pil pidi-display-st7789 mopidy-raspberry-gpio Mopidy-Iris
+
+#Add to groups - verify necessity of video mopidy instead of audio mopidy
+usermod -a -G spi,i2c,gpio,video mopidy 
 
 ###Solution, if gi error comes up in mopidy
 #sudo apt install python-gobject
